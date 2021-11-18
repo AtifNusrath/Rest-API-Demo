@@ -7,6 +7,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 public class RestApiCallApplication {
 
 	public static void main(String[] args) {
+		System.out.println("Hello from Bridgelabz");
 		SpringApplication.run(RestApiCallApplication.class, args);
 	}
 
