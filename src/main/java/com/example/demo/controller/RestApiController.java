@@ -5,10 +5,13 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.bind.annotation.RestController;
 
-@org.springframework.web.bind.annotation.RestController
+
+@RestController
 @RequestMapping("/hello")
-public class RestController {
+public class RestApiController {
     @RequestMapping(value = {"", "/", "home"})
     public String sayHello() {
         return "Hello From Bridgelabz..";
@@ -20,7 +23,7 @@ public class RestController {
     }
 
     @GetMapping("/param/{name}")
-    public String sayHelloPara(@PathVariable String name) {
+    public String sayHelloParam(@PathVariable String name) {
         return "Hello " + name + " From Bridgelabz";
     }
 }
