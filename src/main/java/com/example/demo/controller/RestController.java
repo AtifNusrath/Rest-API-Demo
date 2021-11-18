@@ -18,7 +18,7 @@ public class RestController {
     public String sayHello(@RequestParam(name= "name")String name){
         return "Hello "+ name +" From Bridgelabz";
     }
-
+    // http://localhost:8080/hello/param/Mohammed
     @GetMapping("/param/{name}")
     public String sayHelloPara(@PathVariable String name) {
         return "Hello " + name + " From Bridgelabz";
@@ -27,5 +27,10 @@ public class RestController {
     @PostMapping("/post")
 	public String sayHello(@RequestBody UserData user) {
 		return "Hello " + user.getFirstName() + " " + user.getLastName() + " From Bridgelabz";
+	}
+    // http://localhost:8080/hello/put/Mohammed?lastName=Atif
+    @PutMapping("/put/{firstName}")
+	public String sayHelloPut(@PathVariable String firstName, @RequestParam(value = "lastName") String lastName) {
+		return "Hello " + firstName + " " + lastName + " From Bridgelabz";
 	}
 }
