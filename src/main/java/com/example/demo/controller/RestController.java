@@ -23,4 +23,9 @@ public class RestController {
     public String sayHelloPara(@PathVariable String name) {
         return "Hello " + name + " From Bridgelabz";
     }
+
+    @PostMapping("/post")
+	public String sayHello(@RequestBody UserData user) {
+		return "Hello " + user.getFirstName() + " " + user.getLastName() + " From Bridgelabz";
+	}
 }
